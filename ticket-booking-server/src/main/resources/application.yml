@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /ticket-booking
+
+spring:
+  flyway:
+    enabled: true
+    schemas: TicketBooking
+    locations: classpath:db/migration
+    baselineOnMigrate: false
+    out-of-order: true
+    ignore-missing-migrations: true
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:13306/TicketBooking
+    username: test
+    password: test
